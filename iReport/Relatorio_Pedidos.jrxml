@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Pedidos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1ef5ad10-95ef-42c3-943c-ddc3b574a36c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="b2e7876f-4ee0-4014-af33-75dc64f288bf"/>
+	<subDataset name="dataset2" uuid="54ac61e4-e8c0-4ec9-a177-72fa3b535da3"/>
+	<queryString>
+		<![CDATA[SELECT * FROM `pedidos`]]>
+	</queryString>
+	<field name="Codigo_Pedido" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Data" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Hora" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Valortotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Mesa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Codigo_Pedido">
+		<groupExpression><![CDATA[$F{Codigo_Pedido}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement x="156" y="27" width="269" height="50" forecolor="#CC0000" uuid="bf647e4c-b700-4aa5-82b3-e247fd225265"/>
+				<textElement textAlignment="Justified">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatórios de Pedidos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="425" y="5" width="80" height="20" uuid="68fe8001-fed7-4c32-a322-5c117467872c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="505" y="5" width="40" height="20" uuid="1b7c47b1-4f59-4647-a42c-f734c1f66d8b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="398" y="26" width="77" height="20" uuid="05613e98-c7ef-49eb-851a-ef4b6a4d1d51"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="26" width="70" height="20" uuid="40a0b2be-d1b1-41c7-b1f0-931f1ecbe8dd"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="26" width="50" height="20" uuid="269774aa-3c72-40ed-9a32-6f155882f52a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="26" width="62" height="20" uuid="182f039f-ea45-4b4f-9622-3de576ec3468"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="26" width="111" height="20" uuid="e7e8448a-08b6-4fe5-9ad0-f2d5a9ed7728"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo do Pedido: ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="39" y="17" width="50" height="20" uuid="b35c64c1-dc14-4fa0-b0e1-110de006019d"/>
+				<textFieldExpression><![CDATA[$F{Codigo_Pedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="17" width="62" height="20" uuid="0b1b1046-7a86-4f66-9c16-7e9459a27a87"/>
+				<textFieldExpression><![CDATA[$F{Data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="226" y="17" width="64" height="20" uuid="9c9cf795-2179-4a07-8993-812ec8d15a74"/>
+				<textFieldExpression><![CDATA[$F{Hora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="17" width="58" height="20" uuid="741b8d7a-2660-4917-94cf-a3a0b92439b0"/>
+				<textFieldExpression><![CDATA[$F{Valortotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="398" y="17" width="77" height="20" uuid="2866d2e9-b969-4293-85fb-e78705de093c"/>
+				<textFieldExpression><![CDATA[$F{Status}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="14" y="0" width="100" height="1" uuid="efbb62fb-44fa-42b2-8edb-1f76d0c69639"/>
+			</line>
+			<line>
+				<reportElement x="126" y="1" width="419" height="1" uuid="96da5c8d-0288-4688-b440-ad368bd501d1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="445" y="17" width="100" height="20" uuid="c4a84175-8c97-4d4e-a5ba-20982a5998b2"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="345" y="17" width="100" height="20" uuid="f69560b3-be6c-4a22-9f9e-7ff4d745f98f"/>
+				<text><![CDATA[Total de Paginas:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
