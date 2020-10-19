@@ -1,3 +1,3 @@
 # Hamburgueria_Administrador
 Projeto em desktop na linguagem java . 
-Parte administraiva do projeto hamburgueria.
+Parte administrativa do projeto hamburgueria.
